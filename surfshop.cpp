@@ -120,11 +120,15 @@ void DisplayTotal(const int iTotalSmall, const int iTotalMedium, const int iTota
 			<< fixed << setprecision(2) << totalLargePrice << endl;
 	}
 
-	cout << totalSmallPrice + totalMediumPrice + totalLargePrice << endl; // Total price
-
 	// If no sales found by if else statement below, output no purchases made
 	if (iTotalSmall == 0 && iTotalMedium == 0 && iTotalLarge == 0)
+	{
 		cout << "No purchases made yet." << endl;
+		return;
+	}
+		
+	// Total price
+	cout << "Amount Due: $" << fixed << setprecision(2) << totalSmallPrice + totalMediumPrice + totalLargePrice << endl;
 }
 
 
