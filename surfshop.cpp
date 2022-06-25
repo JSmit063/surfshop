@@ -21,7 +21,7 @@ const double MEDIUM_PRICE = 190.00;
 const double LARGE_PRICE = 200.00;
 
 
-// For reference, program begins with main function at line 136
+// For reference, program begins with main function at line 140
 
 
 // Function to further describe the options available to the user
