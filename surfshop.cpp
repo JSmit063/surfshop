@@ -10,8 +10,8 @@ may choose to end the program when he/she chooses.
 
 */
 
-#include <iostream>
-#include <iomanip>
+#include <iostream> // I/O header file 
+#include <iomanip> // Header for format manipulation
 
 using namespace std;
 
@@ -21,7 +21,7 @@ const double MEDIUM_PRICE = 190.00;
 const double LARGE_PRICE = 200.00;
 
 
-// For reference, program begins with main function at line 132
+// For reference, program begins with main function at line 136
 
 
 // Function to further describe the options available to the user
@@ -100,6 +100,7 @@ void DisplayTotal(const int iTotalSmall, const int iTotalMedium, const int iTota
 	double totalMediumPrice = 0.00;
 	double totalLargePrice = 0.00;
 
+	// If there is a quantity for any sizes, output the total for that size along with a total of all boards
 	if (iTotalSmall > 0)
 	{
 		totalSmallPrice = iTotalSmall * SMALL_PRICE;
@@ -118,6 +119,9 @@ void DisplayTotal(const int iTotalSmall, const int iTotalMedium, const int iTota
 		cout << "The total number of large surfboards is " << iTotalLarge << " at a total of $"
 			<< fixed << setprecision(2) << totalLargePrice << endl;
 	}
+
+	cout << totalSmallPrice + totalMediumPrice + totalLargePrice << endl; // Total price
+
 	// If no sales found by if else statement below, output no purchases made
 	if (iTotalSmall == 0 && iTotalMedium == 0 && iTotalLarge == 0)
 		cout << "No purchases made yet." << endl;
@@ -151,7 +155,7 @@ int main()
 	cout << "To display total amount due press 'T'" << endl; // refer to the DisplayTotal function
 	cout << "To quit the program press 'Q'" << endl << endl; // Terminates the program
 	cout << "Please enter selection: ";
-	cin >> userPrompt; //*****Need to research changing char to upper...Or use string********
+	cin >> userPrompt; // Could also use string instead of char here, would make if else below simpler
 
 	// I use pretest while loop here becuase I do not know the number of iterations to this loop
 	// Loop terminates when Q is entered
